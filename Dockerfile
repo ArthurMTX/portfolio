@@ -1,11 +1,12 @@
 # ---- deps (cache-friendly) ----
-FROM node:20-slim AS deps
+FROM node:20 AS deps
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --include=optional
+RUN npm ci --include=optional && \
+    npm install --no-save @tailwindcss/oxide-linux-arm64-gnu lightningcss-linux-arm64-gnu
 
 # ---- build ----
-FROM node:20-slim AS build
+FROM node:20 AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
