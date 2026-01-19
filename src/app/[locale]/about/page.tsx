@@ -34,7 +34,7 @@ export default async function About({ params }: AboutPageProps) {
           <div className="bg-mocha-mantle p-6 rounded-2xl border border-mocha-surface0 hover:border-mocha-mauve transition-colors flex flex-col items-center justify-center">
             <div className="relative w-32 h-32 rounded-2xl overflow-hidden mb-4">
               <Image
-                src="/images/avatar.jpg"
+                src="/images/avatar.jpeg"
                 alt={t('imageAlt')}
                 fill
                 className="object-cover"
