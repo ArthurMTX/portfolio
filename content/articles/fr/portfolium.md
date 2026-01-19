@@ -3,6 +3,7 @@ title: "Portfolium"
 description: "Un outil personnel pour suivre, comprendre et expérimenter avec mes investissements."
 date: "2026-01-15"
 tags: ["projet", "finance", "tech"]
+cover: "/images/portfolium.png"
 featured: true
 ---
 
