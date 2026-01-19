@@ -17,8 +17,8 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'fr' }];
 }
 
-// Revalidate every hour
-export const revalidate = 3600;
+// Revalidate every 5 minutes
+export const revalidate = 300;
 
 export default async function Home({ params }: HomePageProps) {
   const { locale } = await params;
