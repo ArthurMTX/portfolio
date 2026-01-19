@@ -30,6 +30,33 @@ interface DashboardProps {
   };
 }
 
+// Helper function to calculate relative time
+function getRelativeTime(dateString: string): string {
+  const now = new Date();
+  const date = new Date(dateString);
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+  
+  if (diffInSeconds < 60) return 'just now';
+  if (diffInSeconds < 3600) {
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes}m ago`;
+  }
+  if (diffInSeconds < 86400) {
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours}h ago`;
+  }
+  if (diffInSeconds < 2592000) {
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days}d ago`;
+  }
+  if (diffInSeconds < 31536000) {
+    const months = Math.floor(diffInSeconds / 2592000);
+    return `${months}mo ago`;
+  }
+  const years = Math.floor(diffInSeconds / 31536000);
+  return `${years}y ago`;
+}
+
 export default function Dashboard({ commits = [], articles = [], translations }: DashboardProps) {
   const [currentTime, setCurrentTime] = useState('');
 
@@ -116,10 +143,11 @@ export default function Dashboard({ commits = [], articles = [], translations }:
             {commits.length > 0 ? (
               commits.map((commit, index) => (
                 <div key={`${commit.url}-${index}`} className="flex justify-between items-center border-b border-mocha-surface0/50 pb-2">
-                  <div className="truncate max-w-[70%]">
+                  <div className="truncate max-w-[80%]">
                     <span className="text-mocha-blue">{commit.repo}:</span> <span className="text-mocha-subtext0" title={commit.message}>{commit.message}</span>
                   </div>
-                  <div className="flex gap-2 text-xs">
+                  <div className="flex gap-3 items-center text-xs">
+                    <span className="text-mocha-surface2">{getRelativeTime(commit.date)}</span>
                     <a href={commit.url} target="_blank" rel="noopener noreferrer" className="text-mocha-mauve hover:underline">{translations.recentActivity.viewCommit}</a>
                   </div>
                 </div>
