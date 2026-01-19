@@ -1,0 +1,21 @@
+services:
+  portfolio:
+    build:
+      context: .
+      target: runtime
+    environment:
+      - NODE_ENV=production
+    restart: always
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`arthurpaly.com`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.routers.portfolio.tls.certresolver=letsencrypt"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+
+networks:
+  web:
+    external: true
