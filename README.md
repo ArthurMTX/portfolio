@@ -1,48 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+[![Live](https://img.shields.io/badge/live-arthurpaly.com-brightgreen)](https://arthurpaly.com)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
 
-First, run the development server:
+Welcome to the repository of my personal portfolio.
+
+This website is my professional showcase. It presents my projects, technical articles, background, and experience in software engineering and DevOps/SRE.
+
+The goal is simple: provide a clean, fast, and maintainable place to centralize my work and professional profile.
+
+🌐 Live website: [https://arthurpaly.com/](https://arthurpaly.com/)
+
+---
+
+## What you’ll find here
+
+* Selected projects with descriptions and GitHub links
+* Technical articles / blog posts
+* Downloadable resume
+* About page
+* Multilingual support (English & French)
+
+---
+
+## Tech stack (short version)
+
+This portfolio is built with:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Markdown for content
+* Internationalization (i18n)
+* Docker for containerization
+
+---
+
+## Run locally
+
+### With Node.js
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### With Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+docker-compose up --build
+```
 
-## Learn More
+Then open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project can be deployed on any platform supporting Next.js, such as Vercel or a self-hosted environment.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Docker
-
-To run the project with Docker:
-
-1. Build and start the container:
-   ```bash
-   docker-compose up --build
-   ```
-
-2. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
+MIT
