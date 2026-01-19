@@ -1,0 +1,150 @@
+{
+  "Metadata": {
+    "title": "Arthur Paly – Ingénieur DevOps & Architecte Plateforme",
+    "description": "Ingénieur logiciel spécialisé en DevOps, platform engineering et fiabilité des systèmes. Je conçois des systèmes cloud-native fiables et scalables, avec un fort accent sur l’automatisation et l’observabilité."
+  },
+  "HomePage": {
+    "greeting": "Bonjour, je m’appelle",
+    "name": "Arthur Paly.",
+    "tagline": "Je conçois des systèmes fiables et scalables.",
+    "description": "Ingénieur logiciel spécialisé en DevOps, platform engineering et fiabilité des systèmes. Je conçois et exploite des systèmes cloud-native avec un fort accent sur l’automatisation, l’observabilité et la sécurité.",
+    "status": "Ouvert aux opportunités en remote (Europe / Worldwide)",
+    "cta": {
+      "projects": "Voir les projets",
+      "contact": "Contact",
+      "about": "En savoir plus"
+    }
+  },
+  "Navigation": {
+    "projects": "Projets",
+    "about": "À propos",
+    "posts": "Blog",
+    "resume": "CV"
+  },
+  "Posts": {
+    "title": "Blog",
+    "subtitle": "Explorer les systèmes, les casser et comprendre comment ils fonctionnent vraiment.",
+    "featured": "À la une",
+    "allPosts": "Tous les articles",
+    "recentPosts": "Articles récents",
+    "readMore": "Lire"
+  },
+  "Article": {
+    "backToPosts": "Retour au blog"
+  },
+  "Projects": {
+    "title": "Projets",
+    "subtitle": "Ce que j'ai construit, des projets perso aux systèmes en production.",
+    "featured": "Projets à la une",
+    "viewAll": "Voir tout"
+  },
+  "Resume": {
+    "title": "CV",
+    "experience": "Expérience",
+    "education": "Formation",
+    "jobs": {
+      "axens": {
+        "title": "Apprenti Ingénieur Systèmes & Sécurité",
+        "company": "Axens",
+        "location": "Salindres, France",
+        "period": "Sep 2022 - Sep 2025",
+        "duties": [
+          "Administration systèmes et support cybersécurité pour des environnements de production critiques",
+          "Assistance aux déploiements, mises à jour de configuration et opérations Linux quotidiennes (dépannage & maintenance)",
+          "Application des bonnes pratiques de sécurité (durcissement serveur, patching, IAM, contrôle d'accès)",
+          "Création de scripts internes pour automatiser les tâches récurrentes et réduire la charge manuelle",
+          "Participation à la surveillance, l'analyse d'incidents et la documentation technique"
+        ]
+      },
+      "bea": {
+        "title": "Stagiaire Développement Logiciel",
+        "company": "BEA Solutions",
+        "location": "Alès, France",
+        "period": "Avr 2022 - Juin 2022",
+        "duties": [
+          "Contribution au développement d'une plateforme d'audit IT interne en C# utilisée pour les évaluations alignées ANSSI",
+          "Participation à la conception logicielle, au prototypage et à l'implémentation de fonctionnalités",
+          "Assistance à l'organisation de projet agile et aux discussions techniques"
+        ]
+      }
+    },
+    "educations": {
+      "imt": {
+        "degree": "Master en Informatique",
+        "school": "IMT Mines Télécom Alès",
+        "location": "Alès, France",
+        "period": "2022 - 2025",
+        "specialization": "Systèmes & Réseaux, Sécurité"
+      },
+      "cvut": {
+        "degree": "Informatique (Programme d'échange)",
+        "school": "ČVUT",
+        "location": "Prague, République Tchèque",
+        "period": "2023",
+        "specialization": "Cybersécurité, Anglais & Mathématiques"
+      }
+    }
+  },
+  "About": {
+    "title": "À propos",
+    "imageAlt": "Photo de profil",
+    "location": "Montpellier, France",
+    "status": "Ouvert aux opportunités en remote (Europe / Worldwide)",
+    "intro": {
+      "greeting": "Salut, moi c'est Arthur.",
+      "description": "Je conçois et j’explore des systèmes d’infrastructure et de plateforme, avec un fort accent sur l’automatisation et la fiabilité. Je consacre mon temps aux environnements cloud-native, j’écris du code pour comprendre le comportement des systèmes et j’améliore la manière dont ils sont conçus, déployés et exploités."
+    },
+    "sections": {
+      "toolbox": "Boîte à outils",
+      "principles": "Principes de travail",
+      "currently": "En ce moment",
+      "beyond": "En dehors du code"
+    },
+    "beyond": {
+      "description": "Lorsque je ne suis pas devant un terminal, je consacre du temps à apprendre l’investissement et le fonctionnement des marchés, à écouter de la musique et à m’occuper de mes chats. J’aime lire des ouvrages de non-fiction, réfléchir au fonctionnement des systèmes dans le monde réel et, à l’occasion, expérimenter des idées par simple curiosité."
+    },
+    "toolbox": {
+      "languages": {
+        "title": "Langages",
+        "go": "services, outillage, workloads concurrents",
+        "typescript": "outillage frontend & backend",
+        "python": "scripting, automatisation, glue code"
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "kubernetes": "déploiement et opération de systèmes",
+        "docker": "conteneurisation et parité dev local",
+        "terraform": "infrastructure reproductible"
+      },
+      "data": {
+        "title": "Data & Observabilité",
+        "postgresql": "base de données principale",
+        "redis": "cache & files d'attente",
+        "prometheus": "métriques et alertes",
+        "grafana": "tableaux de bord et visualisation"
+      },
+      "environment": {
+        "title": "Environnement",
+        "linux": "usage quotidien",
+        "windowsserver": "infrastructure d'entreprise",
+        "git": "workflows trunk-based"
+      }
+    },
+    "principes": {
+      "curiosite": "Je suis guidé par la curiosité et l’apprentissage par l’exploration",
+      "casser_pour_comprendre": "J’aime démonter les systèmes pour comprendre comment ils fonctionnent réellement",
+      "documentation": "Je documente tout, d’abord pour moi, puis pour ceux qui passeront après",
+      "experimentation": "J’apprends surtout en construisant, en testant et en analysant ce qui casse"
+    },
+    "actuellement": {
+      "portfolium": "Développement de Portfolium, une application full-stack de suivi d’investissements",
+      "cloud": "Approfondissement de mes connaissances en cloud et platform engineering",
+      "cicd": "Amélioration du CI/CD, de l’automatisation et de la fiabilité"
+    },
+    "contact": {
+      "title": "Discutons",
+      "description": "Un projet intéressant ou juste envie de dire bonjour ? Je suis toujours content d'échanger.",
+      "cta": "M'envoyer un email"
+    }
+  }
+}

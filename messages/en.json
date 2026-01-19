@@ -1,0 +1,152 @@
+{
+  "Metadata": {
+    "title": "Arthur Paly - DevOps Engineer & Platform Architect",
+    "description": "Software engineer focused on DevOps, platform engineering, and system reliability. Building reliable, scalable cloud-native systems with automation and observability."
+  },
+  "HomePage": {
+    "greeting": "Hi, my name is",
+    "name": "Arthur Paly.",
+    "tagline": "I build reliable, scalable systems.",
+    "description": "Software engineer focused on DevOps, platform engineering, and system reliability. I design and operate cloud-native systems with strong emphasis on automation, observability, and security.",
+    "status": "Open to remote opportunities (Europe / Global)",
+    "cta": {
+      "projects": "View projects",
+      "contact": "Contact",
+      "about": "More about me"
+    }
+  },
+  "Navigation": {
+    "projects": "Projects",
+    "about": "About",
+    "posts": "Blog",
+    "resume": "Resume"
+  },
+  "Posts": {
+    "title": "Blog",
+    "subtitle": "Exploring systems, breaking things, and learning how they really work.",
+    "featured": "Featured",
+    "allPosts": "All Posts",
+    "recentPosts": "Recent Posts",
+    "readMore": "Read"
+  },
+  "Article": {
+    "backToPosts": "Back to blog"
+  },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Things I've built, from side projects to production systems.",
+    "featured": "Featured Projects",
+    "viewAll": "View All"
+  },
+  "Resume": {
+    "title": "Resume",
+    "experience": "Experience",
+    "education": "Education",
+    "jobs": {
+      "axens": {
+        "title": "Systems & Security Engineer Trainee",
+        "company": "Axens",
+        "location": "Salindres, France",
+        "period": "Sep 2022 - Sep 2025",
+        "duties": [
+          "Provided systems administration and cybersecurity support for critical production environments",
+          "Assisted with deployments, config updates and daily Linux operations (troubleshooting & maintenance)",
+          "Applied security best practices (server hardening, patching, IAM, access control)",
+          "Built internal scripts to automate recurring tasks and reduce manual workload",
+          "Participated in monitoring, incident analysis and technical documentation"
+        ]
+      },
+      "bea": {
+        "title": "Software Development Intern",
+        "company": "BEA Solutions",
+        "location": "Alès, France",
+        "period": "Apr 2022 - Jun 2022",
+        "duties": [
+          "Contributed to the development of an internal IT audit platform in C# used for ANSSI-aligned assessments",
+          "Participated in software design, prototyping and feature implementation",
+          "Assisted with agile project organisation and technical discussions"
+        ]
+      }
+    },
+    "educations": {
+      "imt": {
+        "degree": "Master's Degree in Computer Science",
+        "school": "IMT Mines Télécom Alès",
+        "location": "Alès, France",
+        "period": "2022 - 2025",
+        "specialization": "Systems & Networks, Security"
+      },
+      "cvut": {
+        "degree": "Computer Science (Exchange Program)",
+        "school": "ČVUT",
+        "location": "Prague, Czech Republic",
+        "period": "2023",
+        "specialization": "Cybersecurity, English & Mathematics"
+      }
+    }
+  },
+  "About": {
+    "title": "About",
+    "imageAlt": "Profile picture",
+    "location": "Montpellier, France",
+    "status": "Available for work, remote (Europe / Global)",
+    "intro": {
+      "greeting": "Hey, I'm Arthur.",
+      "description": "I build and explore infrastructure and platform systems, with a strong focus on automation and reliability. I spend my time working on cloud-native environments, writing code to understand how systems behave, and improving the way they are built, deployed, and operated."
+    },
+    "sections": {
+      "toolbox": "Toolbox",
+      "principles": "Principles I work by",
+      "currently": "What I'm currently focused on",
+      "beyond": "Beyond code"
+    },
+    "beyond": {
+      "description": "When I'm not in front of a terminal, I spend time learning about investing and markets, listening to music, and taking care of my cats. I enjoy reading non-fiction, thinking about how systems work in the real world, and occasionally tinkering with ideas just out of curiosity."
+    },
+    "toolbox": {
+      "languages": {
+        "title": "Languages",
+        "bash": "scripting, automation, glue code",
+        "javascript": "backend & frontend tooling",
+        "python": "scripting, automation, glue code"
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "kubernetes": "deploying and operating long-running systems",
+        "docker": "containerization and local dev parity",
+        "terraform": "reproducible infrastructure",
+        "ansible": "configuration management and orchestration"
+      },
+      "data": {
+        "title": "Data & Observability",
+        "postgresql": "primary datastore",
+        "redis": "caching & queues",
+        "prometheus": "metrics and alerting",
+        "grafana": "dashboards and visualization"
+      },
+      "environment": {
+        "title": "Environment",
+        "linux": "daily driver",
+        "windowsserver": "enterprise infrastructure",
+        "git": "trunk-based workflows",
+        "cicd": "GitHub Actions, automated testing & deployment"
+      }
+    },
+    "principles": {
+      "curiosity": "I'm driven by curiosity and learning through exploration",
+      "break_to_learn": "I like breaking systems apart to understand how they really work",
+      "documentation": "I document everything, for myself first, and for anyone who comes after",
+      "experimentation": "I learn best by building, testing, and analyzing what breaks"
+    },
+    "currently": {
+      "portfolium": "Building Portfolium, a full-stack investment tracking app",
+      "cloud": "Deepening my understanding of cloud and platform engineering",
+      "cicd": "Improving CI/CD, automation, and reliability"
+    },
+    "contact": {
+      "title": "Let's chat",
+      "description": "Got an interesting project or just want to say hi? I'm always happy to connect.",
+      "cta": "Send me an email"
+    }
+  }
+}
