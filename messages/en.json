@@ -148,5 +148,29 @@
       "description": "Got an interesting project or just want to say hi? I'm always happy to connect.",
       "cta": "Send me an email"
     }
+  },
+  "Dashboard": {
+    "getInTouch": {
+      "title": "Get in Touch",
+      "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions."
+    },
+    "basedIn": {
+      "title": "Based In",
+      "location": "Montpellier, France",
+      "remote": "Remote Worldwide"
+    },
+    "recentActivity": {
+      "title": "Recent Activity",
+      "viewCommit": "View",
+      "noActivity": "No recent public activity",
+      "checkGithub": "Check GitHub for older activity",
+      "viewProfile": "View GitHub profile"
+    },
+    "latestThoughts": {
+      "title": "Latest Thoughts",
+      "noPosts": "No posts yet",
+      "checkBack": "Check back soon for new content",
+      "readAll": "Read all posts"
+    }
   }
 }

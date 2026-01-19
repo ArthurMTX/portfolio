@@ -11,7 +11,7 @@ export interface GithubCommit {
 export async function getRecentCommits(username: string): Promise<GithubCommit[]> {
   try {
     const response = await fetch(`https://api.github.com/users/${username}/events`, {
-      next: { revalidate: 3600 }, // Cache for 1 hour instead of 1 minute
+      next: { revalidate: 3600 }, // Cache for 1 hour
       headers: {
         'Accept': 'application/vnd.github.v3+json',
         ...(process.env.GITHUB_TOKEN && {

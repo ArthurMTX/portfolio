@@ -25,6 +25,7 @@ export default async function Home({ params }: HomePageProps) {
   const t = await getTranslations('HomePage');
   const tProjects = await getTranslations('Projects');
   const tPosts = await getTranslations('Posts');
+  const tDashboard = await getTranslations('Dashboard');
   const commits = await getRecentCommits('ArthurMTX');
   const featuredProjects = await getFeaturedProjects(locale);
   const recentPosts = await getAllArticles(locale);
@@ -167,7 +168,34 @@ export default async function Home({ params }: HomePageProps) {
       )}
 
       {/* ===== DASHBOARD ===== */}
-      <Dashboard commits={commits} articles={recentPosts} />
+      <Dashboard 
+        commits={commits} 
+        articles={recentPosts}
+        translations={{
+          getInTouch: {
+            title: tDashboard('getInTouch.title'),
+            description: tDashboard('getInTouch.description')
+          },
+          basedIn: {
+            title: tDashboard('basedIn.title'),
+            location: tDashboard('basedIn.location'),
+            remote: tDashboard('basedIn.remote')
+          },
+          recentActivity: {
+            title: tDashboard('recentActivity.title'),
+            viewCommit: tDashboard('recentActivity.viewCommit'),
+            noActivity: tDashboard('recentActivity.noActivity'),
+            checkGithub: tDashboard('recentActivity.checkGithub'),
+            viewProfile: tDashboard('recentActivity.viewProfile')
+          },
+          latestThoughts: {
+            title: tDashboard('latestThoughts.title'),
+            noPosts: tDashboard('latestThoughts.noPosts'),
+            checkBack: tDashboard('latestThoughts.checkBack'),
+            readAll: tDashboard('latestThoughts.readAll')
+          }
+        }}
+      />
     </PageLayout>
   );
 }

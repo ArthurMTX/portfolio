@@ -146,5 +146,29 @@
       "description": "Un projet intéressant ou juste envie de dire bonjour ? Je suis toujours content d'échanger.",
       "cta": "M'envoyer un email"
     }
+  },
+  "Dashboard": {
+    "getInTouch": {
+      "title": "Contactez-moi",
+      "description": "Je suis toujours ouvert à discuter de nouveaux projets, d'idées créatives ou d'opportunités de faire partie de vos visions."
+    },
+    "basedIn": {
+      "title": "Basé à",
+      "location": "Montpellier, France",
+      "remote": "Remote - Monde entier"
+    },
+    "recentActivity": {
+      "title": "Activité Récente",
+      "viewCommit": "Voir",
+      "noActivity": "Aucune activité publique récente",
+      "checkGithub": "Consultez GitHub pour l'activité ancienne",
+      "viewProfile": "Voir le profil GitHub"
+    },
+    "latestThoughts": {
+      "title": "Dernières Réflexions",
+      "noPosts": "Pas encore d'articles",
+      "checkBack": "Revenez bientôt pour du nouveau contenu",
+      "readAll": "Lire tous les articles"
+    }
   }
 }

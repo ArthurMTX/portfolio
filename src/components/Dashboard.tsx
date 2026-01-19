@@ -22,9 +22,15 @@ const Map = dynamic(() => import('./Map'), {
 interface DashboardProps {
   commits?: GithubCommit[];
   articles?: ArticleMeta[];
+  translations: {
+    getInTouch: { title: string; description: string };
+    basedIn: { title: string; location: string; remote: string };
+    recentActivity: { title: string; viewCommit: string; noActivity: string; checkGithub: string; viewProfile: string };
+    latestThoughts: { title: string; noPosts: string; checkBack: string; readAll: string };
+  };
 }
 
-export default function Dashboard({ commits = [], articles = [] }: DashboardProps) {
+export default function Dashboard({ commits = [], articles = [], translations }: DashboardProps) {
   const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
@@ -53,11 +59,11 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
         <div className="bg-mocha-mantle p-6 rounded-2xl border border-mocha-surface0 flex flex-col justify-between h-64 hover:border-mocha-mauve transition-colors">
           <div className="flex items-center gap-2 text-mocha-text">
             <Mail size={20} className="text-mocha-mauve" />
-            <span className="font-bold text-lg">Get in Touch</span>
+            <span className="font-bold text-lg">{translations.getInTouch.title}</span>
           </div>
           
           <p className="text-mocha-subtext0 text-base leading-relaxed max-w-md">
-            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            {translations.getInTouch.description}
           </p>
           
           <a href="mailto:paly.arthur@gmail.com" className="w-full py-3 rounded-xl bg-mocha-surface0 text-mocha-text font-bold hover:bg-mocha-mauve hover:text-mocha-base transition-colors flex items-center justify-center gap-2">
@@ -70,7 +76,7 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
         <div className="bg-mocha-mantle p-6 rounded-2xl border border-mocha-surface0 flex flex-col justify-between h-64 relative overflow-hidden hover:border-mocha-mauve transition-colors">
           <div className="relative z-10 flex items-center gap-2 text-mocha-text">
             <MapPin size={20} className="text-mocha-mauve" />
-            <span className="font-bold text-lg">Based In</span>
+            <span className="font-bold text-lg">{translations.basedIn.title}</span>
           </div>
           
           {/* Map Placeholder */}
@@ -79,9 +85,9 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
           </div>
           
           <div className="relative z-10 mt-auto pointer-events-none">
-            <h3 className="text-3xl font-bold text-mocha-text tracking-tight drop-shadow-md">Montpellier, France</h3>
+            <h3 className="text-3xl font-bold text-mocha-text tracking-tight drop-shadow-md">{translations.basedIn.location}</h3>
             <div className="flex justify-between items-end mt-2">
-              <span className="text-mocha-subtext0 drop-shadow-md font-medium">Remote Worldwide</span>
+              <span className="text-mocha-subtext0 drop-shadow-md font-medium">{translations.basedIn.remote}</span>
               <div className="flex items-center gap-2">
                 <span className="text-mocha-mauve font-mono text-base font-semibold bg-mocha-surface0/80 backdrop-blur-sm px-2 py-1 rounded shadow-sm">
                   {currentTime || '00:00:00'}
@@ -101,7 +107,7 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-2 text-mocha-text">
               <GitCommit size={20} className="text-mocha-mauve" />
-              <span className="font-bold text-lg">Recent Activity</span>
+              <span className="font-bold text-lg">{translations.recentActivity.title}</span>
             </div>
             <span className="text-xs text-mocha-subtext0 font-mono bg-mocha-surface0 px-2 py-1 rounded">github.com/ArthurMTX</span>
           </div>
@@ -114,21 +120,21 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
                     <span className="text-mocha-blue">{commit.repo}:</span> <span className="text-mocha-subtext0" title={commit.message}>{commit.message}</span>
                   </div>
                   <div className="flex gap-2 text-xs">
-                    <a href={commit.url} target="_blank" rel="noopener noreferrer" className="text-mocha-mauve hover:underline">View</a>
+                    <a href={commit.url} target="_blank" rel="noopener noreferrer" className="text-mocha-mauve hover:underline">{translations.recentActivity.viewCommit}</a>
                   </div>
                 </div>
               ))
             ) : (
               <div className="text-mocha-subtext0 py-4">
-                <div className="text-center mb-2">No recent public activity</div>
-                <div className="text-xs text-mocha-surface2 text-center">Check GitHub for older activity</div>
+                <div className="text-center mb-2">{translations.recentActivity.noActivity}</div>
+                <div className="text-xs text-mocha-surface2 text-center">{translations.recentActivity.checkGithub}</div>
               </div>
             )}
           </div>
           
           <div className="mt-6 flex items-center gap-2 text-xs">
             <a href="https://github.com/ArthurMTX" target="_blank" rel="noopener noreferrer" className="text-mocha-subtext0 hover:text-mocha-mauve flex items-center gap-1 transition-colors">
-              View GitHub profile <ArrowRight size={12} />
+              {translations.recentActivity.viewProfile} <ArrowRight size={12} />
             </a>
           </div>
         </div>
@@ -138,7 +144,7 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-2 text-mocha-text">
               <FileText size={20} className="text-mocha-mauve" />
-              <span className="font-bold text-lg">Latest Thoughts</span>
+              <span className="font-bold text-lg">{translations.latestThoughts.title}</span>
             </div>
             <ExternalLink size={16} className="text-mocha-mauve" />
           </div>
@@ -162,15 +168,15 @@ export default function Dashboard({ commits = [], articles = [] }: DashboardProp
               ))
             ) : (
               <div className="text-mocha-subtext0 py-4">
-                <div className="text-center mb-2">No posts yet</div>
-                <div className="text-xs text-mocha-surface2 text-center">Check back soon for new content</div>
+                <div className="text-center mb-2">{translations.latestThoughts.noPosts}</div>
+                <div className="text-xs text-mocha-surface2 text-center">{translations.latestThoughts.checkBack}</div>
               </div>
             )}
           </div>
           
            <div className="mt-6 flex items-center gap-2 text-xs">
             <Link href="/posts" className="text-mocha-subtext0 hover:text-mocha-mauve flex items-center gap-1 transition-colors">
-              Read all posts <ArrowRight size={12} />
+              {translations.latestThoughts.readAll} <ArrowRight size={12} />
             </Link>
           </div>
         </div>
