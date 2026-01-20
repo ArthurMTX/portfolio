@@ -12,6 +12,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const otherLocale = locale === 'en' ? 'fr' : 'en';
+  
+  // Save locale preference when user switches language
+  const handleLocaleChange = (newLocale: string) => {
+    // Save to cookie
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+    // Save to localStorage as backup
+    localStorage.setItem('preferredLocale', newLocale);
+  };
 
   const navItems = [
     { href: '/about', label: t('about'), isActive: pathname === '/about' },
@@ -55,7 +63,8 @@ export default function Navbar() {
           <li className="ml-2 pl-2 border-l border-mocha-surface0">
             <Link 
               href={pathname} 
-              locale={otherLocale} 
+              locale={otherLocale}
+              onClick={() => handleLocaleChange(otherLocale)}
               className="px-3 py-2 rounded-lg text-mocha-subtext0 hover:text-mocha-mauve hover:bg-mocha-surface0/50 transition-all uppercase text-xs font-mono focus-ring"
             >
               {otherLocale}
@@ -96,7 +105,10 @@ export default function Navbar() {
               <Link 
                 href={pathname} 
                 locale={otherLocale}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  handleLocaleChange(otherLocale);
+                  setMobileMenuOpen(false);
+                }}
                 className="block px-4 py-3 rounded-lg text-mocha-subtext0 hover:text-mocha-mauve hover:bg-mocha-surface0/50 transition-all uppercase text-sm font-mono"
               >
                 {otherLocale === 'en' ? '🇬🇧 English' : '🇫🇷 Français'}
