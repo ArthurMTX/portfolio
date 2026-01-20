@@ -3,7 +3,12 @@ FROM node:20 AS deps
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --include=optional && \
-    npm install --no-save @tailwindcss/oxide-linux-arm64-gnu lightningcss-linux-arm64-gnu
+    ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        npm install --no-save @tailwindcss/oxide-linux-x64-gnu lightningcss-linux-x64-gnu; \
+    elif [ "$ARCH" = "aarch64" ]; then \
+        npm install --no-save @tailwindcss/oxide-linux-arm64-gnu lightningcss-linux-arm64-gnu; \
+    fi
 
 # ---- build ----
 FROM node:20 AS build
