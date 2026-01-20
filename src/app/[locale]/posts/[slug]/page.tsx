@@ -7,6 +7,9 @@ import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arthurpaly.com';
 
 interface ArticlePageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -15,6 +18,7 @@ interface ArticlePageProps {
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = await getArticleBySlug(slug, locale);
+  const alternateLocale = locale === 'en' ? 'fr' : 'en';
   
   if (!article) {
     return { title: 'Article Not Found' };
@@ -23,6 +27,40 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   return {
     title: article.title,
     description: article.description,
+    keywords: article.tags,
+    authors: [{ name: 'Arthur Paly' }],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/posts/${slug}`,
+      languages: {
+        'en': `${baseUrl}/en/posts/${slug}`,
+        'fr': `${baseUrl}/fr/posts/${slug}`,
+      },
+    },
+    openGraph: {
+      type: 'article',
+      locale: locale === 'fr' ? 'fr_FR' : 'en_US',
+      alternateLocale: alternateLocale === 'fr' ? 'fr_FR' : 'en_US',
+      url: `${baseUrl}/${locale}/posts/${slug}`,
+      title: article.title,
+      description: article.description,
+      publishedTime: article.date,
+      authors: ['Arthur Paly'],
+      tags: article.tags,
+      images: article.cover ? [
+        {
+          url: article.cover,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: article.cover ? [article.cover] : [],
+    },
   };
 }
 
@@ -41,6 +79,7 @@ export async function generateStaticParams() {
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { locale, slug } = await params;
   const t = await getTranslations('Article');
+  const tNav = await getTranslations('Navigation');
   const article = await getArticleBySlug(slug, locale);
   
   if (!article) {
@@ -49,6 +88,24 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <PageLayout narrow>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title={article.title}
+        description={article.description}
+        url={`${baseUrl}/${locale}/posts/${slug}`}
+        datePublished={article.date}
+        author="Arthur Paly"
+        image={article.cover}
+        tags={article.tags}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: tNav('home'), url: `${baseUrl}/${locale}` },
+          { name: tNav('posts'), url: `${baseUrl}/${locale}/posts` },
+          { name: article.title, url: `${baseUrl}/${locale}/posts/${slug}` },
+        ]}
+      />
+
       {/* Back link */}
       <Link 
         href="/posts" 

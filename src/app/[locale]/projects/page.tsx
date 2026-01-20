@@ -4,9 +4,34 @@ import ProjectCard from "@/components/ProjectCard";
 import { getAllProjects, formatProjectDate } from "@/lib/projects";
 import { getTranslations } from 'next-intl/server';
 import { Folder } from 'lucide-react';
+import type { Metadata } from 'next';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arthurpaly.com';
 
 interface ProjectsPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: ProjectsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Projects' });
+  
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}/projects`,
+      languages: {
+        'en': `${baseUrl}/en/projects`,
+        'fr': `${baseUrl}/fr/projects`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('subtitle'),
+      url: `${baseUrl}/${locale}/projects`,
+    },
+  };
 }
 
 // Static generation for all locales

@@ -16,6 +16,7 @@
     }
   },
   "Navigation": {
+    "home": "Home",
     "projects": "Projects",
     "about": "About",
     "posts": "Blog",
@@ -87,6 +88,7 @@
   },
   "About": {
     "title": "About",
+    "metaDescription": "Learn more about Arthur Paly - DevOps Engineer and Platform Architect passionate about automation, infrastructure, and cloud-native systems.",
     "imageAlt": "Profile picture",
     "location": "Montpellier, France",
     "status": "Available for work, remote (Europe / Global)",

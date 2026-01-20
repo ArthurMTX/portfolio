@@ -16,6 +16,7 @@
     }
   },
   "Navigation": {
+    "home": "Accueil",
     "projects": "Projets",
     "about": "À propos",
     "posts": "Blog",
@@ -87,6 +88,7 @@
   },
   "About": {
     "title": "À propos",
+    "metaDescription": "En savoir plus sur Arthur Paly - Ingénieur DevOps et Architecte Plateforme passionné par l'automatisation, l'infrastructure et les systèmes cloud-native.",
     "imageAlt": "Photo de profil",
     "location": "Montpellier, France",
     "status": "Ouvert aux opportunités en remote (Europe / Worldwide)",

@@ -4,9 +4,34 @@ import { Link } from "@/i18n/routing";
 import { getAllArticles, formatDate } from "@/lib/articles";
 import { getTranslations } from 'next-intl/server';
 import { Calendar, Clock, ArrowRight, Sparkles, PenLine } from 'lucide-react';
+import type { Metadata } from 'next';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arthurpaly.com';
 
 interface PostsPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PostsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Posts' });
+  
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}/posts`,
+      languages: {
+        'en': `${baseUrl}/en/posts`,
+        'fr': `${baseUrl}/fr/posts`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('subtitle'),
+      url: `${baseUrl}/${locale}/posts`,
+    },
+  };
 }
 
 // Static generation for all locales

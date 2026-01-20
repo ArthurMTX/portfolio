@@ -3,9 +3,35 @@ import PageHeader from "@/components/PageHeader";
 import { Github, Linkedin, Mail, MapPin, Terminal, User, Compass, Target, Heart } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arthurpaly.com';
 
 interface AboutPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'About' });
+  
+  return {
+    title: t('title'),
+    description: t('metaDescription'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}/about`,
+      languages: {
+        'en': `${baseUrl}/en/about`,
+        'fr': `${baseUrl}/fr/about`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('metaDescription'),
+      url: `${baseUrl}/${locale}/about`,
+      type: 'profile',
+    },
+  };
 }
 
 // Static generation for all locales

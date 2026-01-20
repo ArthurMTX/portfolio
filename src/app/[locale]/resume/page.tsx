@@ -4,9 +4,34 @@ import { Download, FileText, Briefcase, GraduationCap, MapPin } from 'lucide-rea
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arthurpaly.com';
 
 interface ResumePageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: ResumePageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Resume' });
+  
+  return {
+    title: t('title'),
+    description: locale === 'en' ? 'Professional experience and education of Arthur Paly' : 'Expérience professionnelle et formation d\'Arthur Paly',
+    alternates: {
+      canonical: `${baseUrl}/${locale}/resume`,
+      languages: {
+        'en': `${baseUrl}/en/resume`,
+        'fr': `${baseUrl}/fr/resume`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: locale === 'en' ? 'Professional experience and education of Arthur Paly' : 'Expérience professionnelle et formation d\'Arthur Paly',
+      url: `${baseUrl}/${locale}/resume`,
+    },
+  };
 }
 
 // Static generation for all locales
